@@ -1,0 +1,43 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Search</h4>
+          </div>
+          <div class="content">
+            <form>
+              <div class="row">
+                <div class="col-md-5">
+                  <label>Name</label>
+                  <input type="text" class="form-control"  [formControl]="name" name="name" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5">
+                  <label>Genre</label>
+                  <select class="form-control" [formControl]="genre" name="genre">
+                    <option value="">All</option>
+                    <option value="MMOG">MMOG</option>
+                    <option value="MMORPG">MMORPG</option>
+                    <option value="RPG">RPG</option>
+                  </select>
+                </div>
+                <div class="col-md-5">
+
+                  <label>Fee</label>
+                  <select class="form-control" [formControl]="fee" name="fee">
+                <option value="">All</option>
+                <option value="free">Free</option>
+                <option value="Item Mall">Item Mall</option>
+                <option value="$">Paid monthly</option>
+              </select></div>
+                <a (click)="clearFilter()" class="btn btn-info">Clear Filter</a></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

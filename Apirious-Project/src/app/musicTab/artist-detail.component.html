@@ -1,0 +1,54 @@
+<div class="main-content">
+  <div class="container-fluid">
+
+    <div class="row" *ngIf="artist">
+      <div class="card card-user col-md-6 row">
+        <div class="image">
+          <img src="https://static1.squarespace.com/static/558b1d64e4b09ef3bcc2abcc/t/559597ffe4b06639d23a3756/1435867136705/artist.jpg" alt="..." />
+        </div>
+        <div class="content">
+          <div class="author">
+
+            <img class="avatar border-gray" src="{{artist.picurl}}" alt="..." />
+            <h4 class="title">Name : <small>{{artist.name}}</small> </h4>
+            <h4 class="title">Albums : <small>{{artist.albums.length}}</small> </h4>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="card card-user  row">
+        <div class="content">
+          <h4 class="" *ngFor="let album of artist.albums" [class.selected]="album === selectedAlbum" (click)="onSelectAlbum(album)">
+        &nbsp; &nbsp; &nbsp; &nbsp;
+        <button  class="btn btn-success">Album :  &nbsp; &nbsp;<small>{{album.name}}</small></button>
+      </h4>&nbsp; &nbsp; &nbsp; &nbsp;
+          <button class="btn btn-info" (click)="goBack()">Back</button>
+        </div>
+      </div>
+
+
+      <div *ngIf="selectedAlbum" class="row">
+        <h4 class="text-info" style="text-align: center;">  &nbsp; &nbsp;{{selectedAlbum.name+", "+selectedAlbum.songs.length}} songs !</h4>
+        <div class="col-md-4" *ngFor="let song of selectedAlbum.songs">
+          <div class="card card-user">
+            <div class="image">
+              <img src="http://www.publicdomainpictures.net/pictures/10000/velka/87-1265714548Otmq.jpg" alt="..." />
+            </div>
+            <div class="content">
+              <div class="author">
+                <div class="space"></div>
+                <h4 class="title">Name :<small>{{song.name }}</small></h4>
+                <h4 class="title">Length :<small>{{ song.length+" min"}}</small></h4><br>
+                <hr>
+                <iframe [src]="this.sanitizer.bypassSecurityTrustResourceUrl(song.songurl)" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

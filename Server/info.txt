@@ -1,0 +1,15 @@
+json-server --watch db.json
+
+
+Resources
+  
+	http://localhost:3000/Artists
+  
+	http://localhost:3000/Games
+
+  
+  
+
+Home
+  
+	http://localhost:3000
