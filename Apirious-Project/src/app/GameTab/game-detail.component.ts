@@ -18,7 +18,7 @@ import { AppState, ACTIONS } from '../state-management/games.reducer';
   styleUrls: ['./game-detail.component.css'],
 })
 export class GameDetailComponent implements OnInit {
-  @Input() game: Game;
+  public game: Game;
 
   constructor(
     private store: Store<AppState>,
@@ -35,18 +35,7 @@ export class GameDetailComponent implements OnInit {
       .switchMap((params: ParamMap) => this.gameService.getGame(+params.get('id')))
       .subscribe(game => this.game = game);
   }
-  delGame() {
-    this.store.dispatch({
-      type: ACTIONS.DELETE_GAME,
-      payload: this.game,
-    });
-    this.router.navigate(['/']);
-  }
-  /*
-  delGame(): void {
-     this.gameService.delete(this.game.id);
-       this.router.navigate(['/']);
-  }*/
+ 
   goBack(): void {
     this.router.navigate(['/Games']);
   }

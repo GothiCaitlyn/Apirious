@@ -18,11 +18,9 @@ export function filterReducer(
   action: Action): IFilter {
 
   switch (action.type) {
-    case ACTIONS.UPDATE_FILTER:
-      // Create a new state from payload
+    case ACTIONS.UPDATE_FILTER: 
       return Object.assign({}, action.payload);
     case ACTIONS.CLEAR_FILTER:
-      // Create anew state from intial state
       return Object.assign({}, intialState);
     default:
       return state;

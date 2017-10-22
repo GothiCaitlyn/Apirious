@@ -7,13 +7,16 @@ import { Game } from '../entities/game';
 import { GAMES } from '../data';
 import { AppState, ACTIONS } from '../state-management/games.reducer';
 import { Store } from '@ngrx/store';
-import { Http, Headers, RequestOptions, Response } from '@angular/http';
+import { Http, Headers, RequestOptions, Response } from '@angular/http'; 
 
 @Injectable()
 export class GameService {
   private headers = new Headers({ 'Content-Type': 'application/json' });
   private _baseUrl = 'http://localhost:3000/Games';
-  constructor(private store: Store<AppState>, private http: Http) { }
+  constructor(
+    private store: Store<AppState>,
+    private http: Http) { }
+
 
   private toGame(value: any) {
     return {
@@ -37,13 +40,6 @@ export class GameService {
     });
   }
 
-  /*
-  getGames(): Promise<Game[]> {
-    return this.http.get(this._baseUrl)
-      .toPromise()
-      .then(response => response.json() as Game[])
-      .catch(this.handleError);
-  }*/
   getGame(id: number): Promise<Game> {
     const url = `${this._baseUrl}/${id}`;
     return this.http.get(url)
@@ -51,18 +47,23 @@ export class GameService {
       .then(response => response.json() as Game)
       .catch(this.handleError);
   }
-/*
+
   delete(id: number): Promise<void> {
 
     return this.http.delete(`${this._baseUrl}/${id}`, { headers: this.headers })
       .toPromise()
       .then(() => null)
       .catch(this.handleError);
-  }*/
-    private handleError(error: any): Promise<any> {
-      console.error(' WTF IS GOING ON ', error); // for demo purposes only
-      return Promise.reject(error.message || error);
-    }
-
+  }
+  private handleError(error: any): Promise<any> {
+    return Promise.reject(error.message || error);
+  }
+  create(game: Game): Promise<Game> {
+    return this.http
+      .post(this._baseUrl, game, { headers: this.headers })
+      .toPromise()
+      .then(res => res.json().data as Game)
+      .catch(this.handleError);
+  }
 
 }

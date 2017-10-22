@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'Music', component: ArtistsComponent },
   { path: 'notifications', component: NotificationsComponent },
   { path: 'Music/ArtistDetails/:id', component: ArtistDetailComponent },
-  { path: 'Games/AddGame',  component: GameAddComponent },
+  { path: 'Games/AddGame',  component: GameAddComponent }, 
   { path: '', redirectTo: 'Home', pathMatch: 'full' }
 ];
 

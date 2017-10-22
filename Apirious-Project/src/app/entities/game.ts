@@ -1,9 +1,9 @@
-export interface Game {
-  id:number;
+export class Game {
+  id: number;
   name: string;
   developer: string;
   genre: string;
   fee: string;
   picurl: string;
-  trailerurl:string;
+  trailerurl: string;
 }

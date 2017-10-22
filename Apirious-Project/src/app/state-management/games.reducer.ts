@@ -24,12 +24,9 @@ export function gamesReducer(
       });
       return Array.prototype.concat(action.payload.ADD, state);
     case ACTIONS.GAMES_LOADED:
-      // Return the new state  with the payload as games list
       return Array.prototype.concat(action.payload);
     case ACTIONS.DELETE_GAME:
-      // Remove the element from the array
-      state.splice(state.indexOf(action.payload), 1);
-      // We need to create another reference
+      state.splice(state.indexOf(action.payload), 1); 
       return Array.prototype.concat(state);
     default:
       return state;

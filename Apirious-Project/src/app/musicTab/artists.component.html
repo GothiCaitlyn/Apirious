@@ -2,12 +2,12 @@
   <div class="container-fluid">
     <div class="row">
 
-      <div class="col-md-4" *ngFor="let artist of artists" [routerLink]="['/Music/ArtistDetails',artist.id]">
-        <div class="card card-user" style="cursor: pointer;">
+      <div class="col-md-4" *ngFor="let artist of artists" >
+        <div class="card card-user" >
           <div class="image">
             <img src="http://twenty9restaurant.com/wp-content/uploads/2014/05/band-IMAGES.jpg" alt="..." />
           </div>
-          <div class="content">
+          <div class="content" style="cursor: pointer;" [routerLink]="['/Music/ArtistDetails',artist.id]">
             <div class="author">
 
               <img class="avatar border-gray" src="{{artist.picurl}}" alt="..." />
@@ -15,11 +15,11 @@
               <h4 class="title">Albums : <small>{{artist.albums.length}}</small> </h4>
             </div>
               <div class="space"></div>
-                    <hr>
-            <div class="text-center">
-              <button class="btn btn-danger" (click)="Delete()">Delete</button>
-            </div>
-          </div>
+
+          </div>  <hr>
+    <div class="text-center">
+      <button class="btn btn-danger" (click)="deleteArtist(artist)">Delete</button>
+    </div>
         </div>
       </div>
     </div>

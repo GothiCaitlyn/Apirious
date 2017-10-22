@@ -1,24 +1,25 @@
 <div class="main-content">
   <div class="container-fluid">
     <div class="row">
-    <app-filter></app-filter>
+      <app-filter></app-filter>
 
-      <div class="col-md-4" *ngFor="let game of games | async" [routerLink]="['/Games/GameDetails',game.id]">
-        <div class="card card-user" style="cursor: pointer;">
+      <div class="col-md-4" *ngFor="let game of games | async">
+        <div class="card card-user">
           <div class="image">
             <img src="https://www.walldevil.com/wallpapers/a21/beautiful-game-design-background-art-games-vector.jpg" alt="..." />
           </div>
-          <div class="content">
+          <div class="content" style="cursor: pointer;" [routerLink]="['/Games/GameDetails',game.id]">
             <div class="author">
 
-                <img class="avatar border-gray" src="{{game.picurl}}" alt="..."/>
-                <h4 class="title">Name : <small>{{game.name}}</small> </h4>
-                <h4 class="title">Developer : <small>{{game.developer}}</small> </h4>
-                <h4 class="title">Genre : <small>{{game.genre}}</small> </h4>
-                <h4 class="title">Fee : <small>{{game.fee}}</small> </h4>
+              <img class="avatar border-gray" src="{{game.picurl}}" alt="..." />
+              <h4 class="title">Name : <small>{{game.name}}</small> </h4>
+              <h4 class="title">Developer : <small>{{game.developer}}</small> </h4>
+              <h4 class="title">Genre : <small>{{game.genre}}</small> </h4>
+              <h4 class="title">Fee : <small>{{game.fee}}</small> </h4>
 
             </div>
-          </div>
+          </div><hr>  <div class="text-center">&nbsp; &nbsp; &nbsp; &nbsp;
+          <button class="btn btn-danger" (click)="delGame(game)">Delete</button></div>
         </div>
       </div>
     </div>

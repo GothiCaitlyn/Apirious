@@ -3,8 +3,7 @@ import { Artist } from '../entities/artist';
 import { Router } from '@angular/router';
 import { Song } from '../entities/song';
 import { DomSanitizer } from '@angular/platform-browser';
-
-// Keep the Input import for now, you'll remove it later:
+ 
 import { Component, Input, OnInit  } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';

@@ -36,8 +36,7 @@ export class ArtistService {
   }
 
 
-  private handleError(error: any): Promise<any> {
-    console.error(' WTF IS GOING ON ', error); // for demo purposes only
+  private handleError(error: any): Promise<any> { 
     return Promise.reject(error.message || error);
   }
 }
