@@ -23,7 +23,6 @@ export class GamesComponent implements OnInit {
     private store: Store<AppState>,
     private gameService: GameService,
     private router: Router) {
-this.runIt()
   }
 
   applyFilter(games: Array<Game>, filter: IFilter): Array<Game> {
@@ -32,16 +31,18 @@ this.runIt()
       .filter(x => !filter.genre || x.genre.toLowerCase().indexOf(filter.genre.toLowerCase()) != -1)
       .filter(x => !filter.fee || x.fee.toLowerCase().indexOf(filter.fee.toLowerCase()) != -1);
   }
-runIt(){
+  runIt() {
 
     this.games = Observable.combineLatest(this.store.select('games'), this.store.select('filter'), this.applyFilter);
     this.gameService.run();
-}
+  }
   ngOnInit() {
+    this.runIt();
   }
   delGame(game: Game): void {
-    this.gameService.delete(game.id).then(() => {this.runIt()
-      });
+    this.gameService.delete(game.id).then(() => {
+      this.runIt()
+    });
 
     this.router.navigate(['/Games']);
   }

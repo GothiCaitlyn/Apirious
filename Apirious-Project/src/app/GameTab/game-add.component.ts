@@ -41,11 +41,13 @@ export class GameAddComponent {
     this.game.fee = fee.trim();
     this.game.picurl = picurl.trim();
     this.game.trailerurl = trailerurl.trim();
-    if (!name && !developer && !genre && !fee && !picurl && !trailerurl) {
+    if (name.trim() == '' && picurl.trim() == '' && developer.trim() == '' && genre.trim() == '' && fee.trim() == '' && trailerurl.trim() == '') {
+      console.log('empty');
       return;
     }
-    this.gameService.create(this.game).then(game => { });
-    this.router.navigate(['/Games']);
+    this.gameService.create(this.game).then(game => {
+      this.router.navigate(['/Games']);
+    });
   }
   goBack(): void {
     this.router.navigate(['/Games']);
