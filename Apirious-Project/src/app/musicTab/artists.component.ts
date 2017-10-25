@@ -11,7 +11,7 @@ declare interface TableData {
 }
 
 @Component({
-  selector: 'app-tables',
+  selector: 'app-artists',
   templateUrl: './artists.component.html',
   styleUrls: ['./artists.component.css'],
   providers: [ArtistService]

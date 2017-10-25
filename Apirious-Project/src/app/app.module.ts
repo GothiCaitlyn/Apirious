@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
@@ -26,7 +26,7 @@ import { ArtistService } from './services/artist.service';
 import { GameService } from './services/game.service';
 
 import { Store, StoreModule } from '@ngrx/store';
-import {gamesReducer} from './state-management/games.reducer';
+import { gamesReducer } from './state-management/games.reducer';
 import { filterReducer } from './state-management/filter/filter-reducer';
 import { FilterComponent } from './state-management/filter/filter-component';
 
@@ -54,7 +54,7 @@ import { FilterComponent } from './state-management/filter/filter-component';
     RouterModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    StoreModule.provideStore({games : gamesReducer, filter : filterReducer})
+    StoreModule.provideStore({ games: gamesReducer, filter: filterReducer })
   ],
   providers: [ArtistService, GameService],
   bootstrap: [AppComponent]

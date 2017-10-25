@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { FormGroup, FormControl } from '@angular/forms';
-import * as Rx from 'rxjs';
+import * as Rx from 'rxjs/Rx';
 
 import { IFilter, ACTIONS as FilterACTIONS } from './filter-reducer';
 
@@ -20,7 +20,8 @@ export class FilterComponent implements OnInit {
       this.genre.setValue(filter.genre);
       this.fee.setValue(filter.fee);
     });
-    Rx.Observable.merge(this.name.valueChanges, this.genre.valueChanges, this.fee.valueChanges).debounceTime(1000).subscribe(() => this.filter());
+    Rx.Observable.merge(this.name.valueChanges, this.genre.valueChanges, this.fee.valueChanges)
+      .debounceTime(1000).subscribe(() => this.filter());
 
   }
 

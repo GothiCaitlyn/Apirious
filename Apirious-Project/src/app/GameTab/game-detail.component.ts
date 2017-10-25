@@ -13,7 +13,7 @@ import { AppState, ACTIONS } from '../state-management/games.reducer';
 
 
 @Component({
-  selector: 'game-detail',
+  selector: 'app-game-detail',
   templateUrl: './game-detail.component.html',
   styleUrls: ['./game-detail.component.css'],
 })
@@ -35,7 +35,7 @@ export class GameDetailComponent implements OnInit {
       .switchMap((params: ParamMap) => this.gameService.getGame(+params.get('id')))
       .subscribe(game => this.game = game);
   }
- 
+
   goBack(): void {
     this.router.navigate(['/Games']);
   }

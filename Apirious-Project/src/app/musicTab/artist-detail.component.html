@@ -21,7 +21,7 @@
         <div class="content">
           <h4 class="" *ngFor="let album of artist.albums" [class.selected]="album === selectedAlbum" (click)="onSelectAlbum(album)">
         &nbsp; &nbsp; &nbsp; &nbsp;
-        <button  class="btn btn-success">Album :  &nbsp; &nbsp;<small>{{album.name}}</small></button>
+        <button  class="btn btn-success" >Album :  &nbsp; &nbsp;<small>{{album.name}}</small></button>
       </h4>&nbsp; &nbsp; &nbsp; &nbsp;
           <button class="btn btn-info" (click)="goBack()">Back</button>
         </div>

@@ -18,7 +18,7 @@ export function filterReducer(
   action: Action): IFilter {
 
   switch (action.type) {
-    case ACTIONS.UPDATE_FILTER: 
+    case ACTIONS.UPDATE_FILTER:
       return Object.assign({}, action.payload);
     case ACTIONS.CLEAR_FILTER:
       return Object.assign({}, intialState);

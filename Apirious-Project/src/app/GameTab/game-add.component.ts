@@ -10,7 +10,7 @@ import { Game } from '../entities/game';
 
 
 @Component({
-  selector: 'game-add',
+  selector: 'app-game-add',
   templateUrl: './game-add.component.html',
   styleUrls: ['./game-add.component.css'],
 })
@@ -41,13 +41,15 @@ export class GameAddComponent {
     this.game.fee = fee.trim();
     this.game.picurl = picurl.trim();
     this.game.trailerurl = trailerurl.trim();
-    if (name.trim() == '' && picurl.trim() == '' && developer.trim() == '' && genre.trim() == '' && fee.trim() == '' && trailerurl.trim() == '') {
+    if (name.trim() === '' && picurl.trim() === '' && developer.trim() === '' && genre.trim() === ''
+      && fee.trim() === '' && trailerurl.trim() === '') {
       console.log('empty');
       return;
     }
     this.gameService.create(this.game).then(game => {
       this.router.navigate(['/Games']);
     });
+
   }
   goBack(): void {
     this.router.navigate(['/Games']);

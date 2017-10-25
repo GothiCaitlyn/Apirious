@@ -78,8 +78,24 @@ export const ARTISTS: Artist[] = [
 ];
 
 export const GAMES: Game[] = [
-  { id: 0, name: 'World of Warcraft', developer: 'Blizzard', genre: 'MMORPG', fee: '$14.99', picurl: 'https://dvsgaming.org/wp-content/uploads/2015/06/World-Of-Warcraft-Logo2.jpg', trailerurl: 'https://www.youtube.com/embed/0N2XcaMsmOU' },
-  { id: 1, name: 'Final Fantasy 14: A Realm Reborn', developer: 'Square Enix', genre: 'RPG', fee: 'free', picurl: 'http://www.dlcompare.com:8042/upload/cache/game_tetiere/img/final-fantasy-xiv-a-realm-reborn-img-4.jpg', trailerurl: 'https://www.youtube.com/embed/WNj4jOyUoNw' },
-  { id: 2, name: 'Guild Wars 2', developer: 'ArenaNet', genre: 'MMORPG', fee: 'free', picurl: 'https://assets.nuuvem.com/image/upload/v1/products/565c81cd69702d5ee000058a/sharing_images/aj4yqcxoilzqx80crr5e.jpg', trailerurl: 'https://www.youtube.com/embed/Em0Sd60iI2w' },
-  { id: 3, name: 'Star Wars Knights of the Fallen Empire', developer: '	BioWare', genre: 'MMOG', fee: 'Item Mall', picurl: 'http://static2.businessinsider.com/image/56ab7d1bdd0895c6798b46cc-1920/lukeskywalker.jpg', trailerurl: 'https://www.youtube.com/embed/bkgzXpKbVGE' },
+  {
+    id: 0, name: 'World of Warcraft', developer: 'Blizzard', genre: 'MMORPG', fee: '$14.99',
+    picurl: 'https://dvsgaming.org/wp-content/uploads/2015/06/World-Of-Warcraft-Logo2.jpg',
+    trailerurl: 'https://www.youtube.com/embed/0N2XcaMsmOU'
+  },
+  {
+    id: 1, name: 'Final Fantasy 14: A Realm Reborn', developer: 'Square Enix', genre: 'RPG',
+    fee: 'free', picurl: 'http://www.dlcompare.com:8042/upload/cache/game_tetiere/img/final-fantasy-xiv-a-realm-reborn-img-4.jpg',
+    trailerurl: 'https://www.youtube.com/embed/WNj4jOyUoNw'
+  },
+  {
+    id: 2, name: 'Guild Wars 2', developer: 'ArenaNet', genre: 'MMORPG', fee: 'free',
+    picurl: 'https://assets.nuuvem.com/image/upload/v1/products/565c81cd69702d5ee000058a/sharing_images/aj4yqcxoilzqx80crr5e.jpg',
+    trailerurl: 'https://www.youtube.com/embed/Em0Sd60iI2w'
+  },
+  {
+    id: 3, name: 'Star Wars Knights of the Fallen Empire', developer: '	BioWare', genre: 'MMOG', fee: 'Item Mall',
+    picurl: 'http://static2.businessinsider.com/image/56ab7d1bdd0895c6798b46cc-1920/lukeskywalker.jpg',
+    trailerurl: 'https://www.youtube.com/embed/bkgzXpKbVGE'
+  },
 ];

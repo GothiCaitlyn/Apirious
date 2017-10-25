@@ -26,7 +26,7 @@ export function gamesReducer(
     case ACTIONS.GAMES_LOADED:
       return Array.prototype.concat(action.payload);
     case ACTIONS.DELETE_GAME:
-      state.splice(state.indexOf(action.payload), 1); 
+      state.splice(state.indexOf(action.payload), 1);
       return Array.prototype.concat(state);
     default:
       return state;

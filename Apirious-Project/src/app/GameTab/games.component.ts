@@ -9,7 +9,7 @@ import { AppState, ACTIONS } from '../state-management/games.reducer';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-user',
+  selector: 'app-games',
   templateUrl: './games.component.html',
   styleUrls: ['./games.component.css'],
   providers: [GameService]
@@ -22,14 +22,13 @@ export class GamesComponent implements OnInit {
   constructor(
     private store: Store<AppState>,
     private gameService: GameService,
-    private router: Router) {
-  }
+    private router: Router) { }
 
   applyFilter(games: Array<Game>, filter: IFilter): Array<Game> {
     return games
       .filter(x => !filter.name || x.name.toLowerCase().indexOf(filter.name.toLowerCase()) !== -1)
-      .filter(x => !filter.genre || x.genre.toLowerCase().indexOf(filter.genre.toLowerCase()) != -1)
-      .filter(x => !filter.fee || x.fee.toLowerCase().indexOf(filter.fee.toLowerCase()) != -1);
+      .filter(x => !filter.genre || x.genre.toLowerCase().indexOf(filter.genre.toLowerCase()) !== -1)
+      .filter(x => !filter.fee || x.fee.toLowerCase().indexOf(filter.fee.toLowerCase()) !== -1);
   }
   runIt() {
 

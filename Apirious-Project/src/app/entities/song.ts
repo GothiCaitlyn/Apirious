@@ -1,6 +1,6 @@
 export class Song {
-  id:number;
+  id: number;
   name: string;
   length: number;
-  songurl:string;
+  songurl: string;
 }

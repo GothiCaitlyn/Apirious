@@ -1,7 +1,7 @@
 <div class="main-content">
-  <div class="container-fluid">
+  <div class="container-fluid" *ngIf="game">
 
-    <div class="col-md-4" *ngIf="game">
+    <div class="col-md-4">
       <div class="card card-user">
         <div class="image">
           <img src="https://www.walldevil.com/wallpapers/a21/beautiful-game-design-background-art-games-vector.jpg" alt="..." />
@@ -9,21 +9,32 @@
         <div class="content">
           <div class="author">
 
-            <img class="avatar border-gray" src="{{game.picurl}}" alt="..." />
-            <h4 class="title">Name : <small>{{game.name}}</small> </h4>
-            <h4 class="title">Developer : <small>{{game.developer}}</small> </h4>
-            <h4 class="title">Genre : <small>{{game.genre}}</small> </h4>
-            <h4 class="title">Fee : <small>{{game.fee}}</small> </h4>
+            <img class="avatar border-gray" [src]="game.picurl" alt="..." />
+            <h4 class="title">Name :
+              <small>{{game.name}}</small>
+            </h4>
+            <h4 class="title">Developer :
+              <small>{{game.developer}}</small>
+            </h4>
+            <h4 class="title">Genre :
+              <small>{{game.genre}}</small>
+            </h4>
+            <h4 class="title">Fee :
+              <small>{{game.fee}}</small>
+            </h4>
 
           </div>
         </div>
       </div>
     </div>
+
+    <br>
     <div class="image">
-      <h4 class="title">Trailer :</h4><br>
+      <h4 class="title">Trailer :</h4>
+      <br>
       <iframe [src]="this.sanitizer.bypassSecurityTrustResourceUrl(game.trailerurl)" frameborder="0" allowfullscreen></iframe>
-    </div><br>
+    </div>
     <button class="btn btn-info" (click)="goBack()">Back</button>
-    
+
   </div>
 </div>
