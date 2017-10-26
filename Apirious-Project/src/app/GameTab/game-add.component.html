@@ -13,12 +13,18 @@
                   <div class="form-group">
                     <label>Name</label>
                     <input type="text" [(ngModel)]="game.name" name="name" class="form-control" placeholder="Game name">
+                    <font *ngIf="nameEmpty" color="red">
+                      <small>Name can't be empty !</small>
+                    </font>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Developer</label>
                     <input type="text" [(ngModel)]="game.developer" name="developer" class="form-control" placeholder="Game developer">
+                    <font *ngIf="devEmpty" color="red">
+                      <small>Developer field can't be left empty !</small>
+                    </font>
                   </div>
                 </div>
               </div>
@@ -32,6 +38,9 @@
                       <option value="MMORPG">MMORPG</option>
                       <option value="RPG">RPG</option>
                     </select>
+                    <font *ngIf="genreEmpty" color="red">
+                      <small>Please pick a genre </small>
+                    </font>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -41,13 +50,19 @@
                       <option value="free">Free</option>
                       <option value="Item Mall">Item Mall</option>
                       <option value="$">Paid</option>
-                  </select>
+                    </select>
+                    <font *ngIf="feeEmpty" color="red">
+                      <small>Please choose the fee</small>
+                    </font>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-group">
                     <label>Picture Url</label>
                     <input type="text" class="form-control" [(ngModel)]="game.picurl" name="picurl" placeholder="Game picture URL">
+                    <font *ngIf="picEmpty" color="red">
+                      <small>Please add a picture URL</small>
+                    </font>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -59,7 +74,7 @@
               </div>
 
 
-              <button type="submit" (click)="add(game.name, game.developer, game.genre, game.fee, game.picurl, game.trailerurl)" class="btn btn-info btn-fill pull-right">Save</button>
+              <button type="button" (click)="add(game.name, game.developer, game.genre, game.fee, game.picurl, game.trailerurl)" class="btn btn-info btn-fill pull-right">Save</button>
               <div class="clearfix"></div>
             </form>
           </div>
@@ -74,10 +89,18 @@
             <div class="author">
               <img class="avatar border-gray" src="{{game.picurl}}" alt="..." />
 
-              <h4 class="title">Name : <small>{{game.name}}</small> </h4>
-              <h4 class="title">Developer : <small>{{game.developer}}</small> </h4>
-              <h4 class="title">Genre : <small>{{game.genre}}</small> </h4>
-              <h4 class="title">Fee : <small>{{game.fee}}</small> </h4>
+              <h4 class="title">Name :
+                <small>{{game.name}}</small>
+              </h4>
+              <h4 class="title">Developer :
+                <small>{{game.developer}}</small>
+              </h4>
+              <h4 class="title">Genre :
+                <small>{{game.genre}}</small>
+              </h4>
+              <h4 class="title">Fee :
+                <small>{{game.fee}}</small>
+              </h4>
               <hr>
               <iframe [src]="this.sanitizer.bypassSecurityTrustResourceUrl(game.trailerurl)" frameborder="0" allowfullscreen></iframe>
             </div>

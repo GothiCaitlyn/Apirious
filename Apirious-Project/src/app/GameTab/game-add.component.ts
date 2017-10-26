@@ -25,6 +25,12 @@ export class GameAddComponent {
     trailerurl: ''
   };
 
+  nameEmpty: boolean;
+  devEmpty: boolean;
+  picEmpty: boolean;
+  genreEmpty: boolean;
+  feeEmpty: boolean;
+  ifAnyEmpty = 0;
 
   constructor(
     private router: Router,
@@ -41,9 +47,36 @@ export class GameAddComponent {
     this.game.fee = fee.trim();
     this.game.picurl = picurl.trim();
     this.game.trailerurl = trailerurl.trim();
-    if (name.trim() === '' && picurl.trim() === '' && developer.trim() === '' && genre.trim() === ''
-      && fee.trim() === '' && trailerurl.trim() === '') {
-      console.log('empty');
+
+
+    this.nameEmpty = false;
+    this.devEmpty = false;
+    this.picEmpty = false;
+    this.genreEmpty = false;
+    this.feeEmpty = false;
+
+    if (name.trim() === '') {
+      this.nameEmpty = true;
+      this.ifAnyEmpty++;
+    }
+    if (developer.trim() === '') {
+      this.devEmpty = true;
+      this.ifAnyEmpty++;
+    }
+    if (picurl.trim() === '') {
+      this.picEmpty = true;
+      this.ifAnyEmpty++;
+    }
+    if (genre.trim() === '') {
+      this.genreEmpty = true;
+      this.ifAnyEmpty++;
+    }
+    if (fee.trim() === '') {
+      this.feeEmpty = true;
+      this.ifAnyEmpty++;
+    }
+    if (this.ifAnyEmpty > 0) {
+      this.ifAnyEmpty = 0;
       return;
     }
     this.gameService.create(this.game).then(game => {
